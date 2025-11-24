@@ -78,6 +78,7 @@
   "contact_form_inquiry_general": "General",
   "contact_form_inquiry_technical": "Technical",
   "contact_form_inquiry_billing": "Billing",
+  "contact_form_inquiry_other": "Other",
   "contact_form_select": "Select...",
   "contact_form_message": "Message",
   "contact_form_submit": "Send",

@@ -78,6 +78,7 @@
   "contact_form_inquiry_general": "일반",
   "contact_form_inquiry_technical": "기술",
   "contact_form_inquiry_billing": "청구",
+  "contact_form_inquiry_other": "기타",
   "contact_form_select": "선택하세요",
   "contact_form_message": "메시지",
   "contact_form_submit": "보내기",

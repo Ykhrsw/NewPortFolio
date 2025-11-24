@@ -48,6 +48,57 @@ UI/UX最適化や公開済みプロジェクト例も含まれています。
 
 ---
 
+## 📁 Project Structure | ファイル構成  
+
+my-portfolio/
+├── index.html
+├── package.json
+├── vite.config.js
+├── public/
+│ └── pic/
+│ └── (assets & images)
+├── src/
+│ ├── main.jsx
+│ ├── App.jsx
+│ ├── router/
+│ │ └── AppRouter.jsx
+│ ├── i18n/
+│ │ ├── index.js
+│ │ ├── ja.json
+│ │ ├── en.json
+│ │ ├── ko.json
+│ │ └── cn.json
+│ ├── data/
+│ │ └── projects.js
+│ ├── components/
+│ │ ├── Header.jsx
+│ │ ├── Footer.jsx
+│ │ ├── LanguageSelector.jsx
+│ │ ├── HeroSection.jsx
+│ │ ├── ProjectCard.jsx
+│ │ ├── ProjectModal.jsx
+│ │ ├── ContactForm.jsx
+│ │ └── AboutTimeline.jsx
+│ ├── pages/
+│ │ ├── Home.jsx
+│ │ ├── About.jsx
+│ │ ├── Works.jsx
+│ │ ├── Service.jsx
+│ │ └── Contact.jsx
+│ └── assets/
+│ └── css/
+│ ├── base.css
+│ ├── layout.css
+│ ├── theme.css
+│ ├── components.css
+│ └── pages.css
+└── README.md
+
+yaml
+Copy code
+
+---
+
 ## ⚙️ Setup & Installation | セットアップ  
 
 ```bash

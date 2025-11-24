@@ -79,6 +79,7 @@
   "contact_form_inquiry_general": "常规",
   "contact_form_inquiry_technical": "技术",
   "contact_form_inquiry_billing": "账单",
+  "contact_form_inquiry_other": "其他",
   "contact_form_select": "请选择",
   "contact_form_message": "消息",
   "contact_form_submit": "发送",

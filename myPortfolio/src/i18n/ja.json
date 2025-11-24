@@ -72,6 +72,7 @@
   "contact_form_inquiry_general": "一般",
   "contact_form_inquiry_technical": "技術",
   "contact_form_inquiry_billing": "請求",
+  "contact_form_inquiry_other": "その他",
   "contact_form_select": "選択してください",
   "contact_form_message": "メッセージ",
   "contact_form_submit": "送信する",
