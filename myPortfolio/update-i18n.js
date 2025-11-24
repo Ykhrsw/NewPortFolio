@@ -1,0 +1,132 @@
+const fs = require('fs');
+const path = require('path');
+
+const basePath = path.join(__dirname, '..');
+const i18nPath = path.join(basePath, 'src/i18n');
+
+// Common keys
+const commonKeys = {
+  name: 'Yuki Hirasawa',
+  title: 'Web Engineer',
+  intro: 'あなたの想像をそのまま形に',
+  works_title: '作品',
+  services_title: 'サービス紹介',
+  contact_cta: 'お問い合わせ',
+  about_title: 'About',
+  timeline_title: '経歴',
+  contact_title: 'お問い合わせ',
+  skills_title: 'プログラミング言語',
+  skills: 'HTML / CSS / JavaScript / PHP / Python'
+};
+
+// Japanese
+const ja = {
+  ...commonKeys,
+  home_subtitle: '平沢 友希 ❘ Web Engineer',
+  home_intro: '初めまして!',
+  home_skills: 'HTML / CSS / JavaScript / React / Python',
+  home_skills_title: 'プログラミング言語',
+  home_hobbies: '旅行 / 読書 / 運動、スポーツ',
+  home_hobbies_title: '趣味',
+  home_values_title: '僕の軸',
+  home_value_1: '1. "今この瞬間"が一番若い!',
+  home_value_2: '2. 昨日の自分より1つ上のステップへ',
+  home_value_3: '3. 機会があれば、いつでも挑戦',
+  home_value_4: '4. 感謝の気持ちをいつでも胸に',
+  about_career_intro_title: 'Yuki Hirasawa ｜ Web Engineer',
+  about_career_intro: 'システムエンジニアのフリーランサーとして活動しております。',
+  about_skills: 'HTML / CSS / JavaScript / PHP / Python',
+  about_hobbies: '旅行 / 読書 / 運動、スポーツ',
+  about_skills_title: 'プログラミング言語',
+  about_hobbies_title: '趣味',
+  about_timeline_title: '出生から現在',
+  about_1997: '1997年 大阪で生まれる',
+  about_2010: '2010年 中学・高校を通して外国語の楽しさを知る',
+  about_2020: '2020年 関西外国語大学卒業、大阪の5つ星ホテルに就職',
+  about_2023: '2023年 マレーシアのBPOを経験',
+  about_2024: '2024年 会社に在籍しながら、二足の草鞋としてフリーランサーの活動を開始する',
+  about_2025: '2025年 退職を決意し、プログラミングに専念する',
+  about_values_title: '僕の軸',
+  about_value_1: '1. "今この瞬間"が一番若い! "Time is money"、でもお金は時間ではない!',
+  about_value_2: '2. 昨日の自分より1つ上のステップへ どの分野でもいいので、日々自分をアップデートしていく',
+  about_value_3: '3. 機会があれば、いつでも挑戦 タイミングの良し悪しは後からでないとわからない、"Now or Never!!"',
+  about_value_4: '4. 感謝の気持ちをいつでも胸に 人は一人では生きれない、支え合いを常に念頭に置く',
+  service_ux: '多言語UI設計サポート',
+  service_ux_desc: '多言語サイト向けにUI/ナビゲーションの設計を行います。',
+  service_review: '翻訳品質レビュー',
+  service_review_desc: '翻訳の一貫性・用語をチェックし改善提案をします。',
+  service_navigation: 'ナビゲーション設計',
+  service_navigation_desc: 'グローバル向けの分かりやすい導線設計を支援します。',
+  service_translation: '技術翻訳支援',
+  service_translation_desc: '技術ドキュメントの翻訳品質向上をサポートします。',
+  project_1_title: '御神籤アプリケーション',
+  project_1_desc: 'シンプルな占いアプリ（HTML/CSS/JS）',
+  project_2_title: 'オセロゲーム',
+  project_2_desc: 'ブラウザで遊べるオセロ',
+  project_3_title: 'Luxury Housing Malaysia (初期サイト)',
+  project_3_desc: 'Vercelで公開した初期制作サイト',
+  project_4_title: 'ToDo List',
+  project_4_desc: 'シンプルなタスク管理'
+};
+
+// English
+const en = {
+  ...commonKeys,
+  intro: 'Bringing your imagination to life',
+  works_title: 'Works',
+  services_title: 'Services',
+  contact_cta: 'Contact',
+  contact_title: 'Contact',
+  timeline_title: 'Timeline',
+  skills: 'HTML / CSS / JavaScript / PHP / Python',
+  home_subtitle: '平沢 友希 ❘ Yuki Hirasawa ｜ Web Engineer',
+  home_intro: 'Hello! Nice to meet you.',
+  home_skills: 'HTML / CSS / JavaScript / React / Python',
+  home_skills_title: 'Programming Languages',
+  home_hobbies: 'Travel / Reading / Sports & Fitness',
+  home_hobbies_title: 'Hobbies',
+  home_values_title: 'My Principles',
+  home_value_1: '1. "This moment is the youngest I will ever be!"',
+  home_value_2: '2. One step higher than yesterday',
+  home_value_3: '3. Always ready to challenge when opportunities come',
+  home_value_4: '4. Always hold gratitude in my heart',
+  about_career_intro_title: 'Yuki Hirasawa ｜ Web Engineer',
+  about_career_intro: 'I work as a freelance systems engineer.',
+  about_skills: 'HTML / CSS / JavaScript / PHP / Python',
+  about_hobbies: 'Travel / Reading / Sports & Fitness',
+  about_skills_title: 'Programming Languages',
+  about_hobbies_title: 'Hobbies',
+  about_timeline_title: 'Background Timeline',
+  about_1997: '1997 Born in Osaka',
+  about_2010: '2010 Discovered the joy of foreign languages',
+  about_2020: '2020 Graduated from Kansai Gaidai, started at 5-star hotel',
+  about_2023: '2023 Worked at a BPO in Malaysia',
+  about_2024: '2024 Started freelancing while employed',
+  about_2025: '2025 Decided to resign and focus on programming',
+  about_values_title: 'My Principles',
+  about_value_1: '1. "This moment is the youngest!" Time is money, but money is not time!',
+  about_value_2: '2. One step higher Always update myself in every field',
+  about_value_3: '3. Always ready for challenges You never know the right timing until after',
+  about_value_4: '4. Always grateful People cannot live alone',
+  service_ux: 'Multilingual UI Design',
+  service_ux_desc: 'UI and navigation design for multilingual sites.',
+  service_review: 'Translation Quality Review',
+  service_review_desc: 'Check translation consistency and terminology.',
+  service_navigation: 'Navigation Design',
+  service_navigation_desc: 'Support for clear global navigation design.',
+  service_translation: 'Technical Translation Support',
+  service_translation_desc: 'Help improve technical document translation quality.',
+  project_1_title: 'Omikuji Application',
+  project_1_desc: 'Simple fortune-telling app (HTML/CSS/JS)',
+  project_2_title: 'Othello Game',
+  project_2_desc: 'Browser-based Othello game',
+  project_3_title: 'Luxury Housing Malaysia',
+  project_3_desc: 'Initial project published on Vercel',
+  project_4_title: 'ToDo List',
+  project_4_desc: 'Simple task management'
+};
+
+// Write files
+fs.writeFileSync(path.join(i18nPath, 'ja.json'), JSON.stringify(ja, null, 2));
+fs.writeFileSync(path.join(i18nPath, 'en.json'), JSON.stringify(en, null, 2));
+console.log('✓ i18n files updated');

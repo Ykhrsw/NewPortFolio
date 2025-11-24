@@ -1,0 +1,8 @@
+/* Minimal App-level styles kept for compatibility.
+   Most layout/styles live in src/assets/css/*.
+   This file exists so imports like `import "./App.css"` don't fail.
+*/
+
+:root{--app-bg:transparent}
+
+.App{min-height:100vh}
