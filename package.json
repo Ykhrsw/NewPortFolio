@@ -1,0 +1,9 @@
+{
+  "name": "NewPortFolio-root",
+  "private": true,
+  "version": "1.0.0",
+  "scripts": {
+    "build": "cd myPortfolio && npm ci && npm run build",
+    "vercel-build": "npm run build"
+  }
+}
