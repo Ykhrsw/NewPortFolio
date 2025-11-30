@@ -33,7 +33,9 @@
   "project_3_desc": "展示布局和本地化的房地产项目演示页面。",
   "project_4_title": "待办事项清单",
   "project_4_desc": "演示状态管理和持久化的简单任务管理应用。",
-
+  "project_5_title": "测验应用",
+  "project_5_desc": "使用 React 制作的测验",
+  
   "home_subtitle": "前端工程师 & 本地化专家",
   "home_intro": "我设计并实现用户友好的多语言前端。",
   "home_skills": "HTML / CSS / JavaScript / React / Python",

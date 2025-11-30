@@ -37,6 +37,8 @@
   "project_3_desc": "A landing page / demo for a property project showcasing layout and localization.",
   "project_4_title": "ToDo List",
   "project_4_desc": "A small task management app demonstrating state and persistence.",
+  "project_5_title": "Quiz App",
+  "project_5_desc": "A quiz application built with React.",
 
   "home_subtitle": "Front-end Engineer & Localisation Specialist",
   "home_intro": "I design and implement user-friendly, multilingual front-ends.",

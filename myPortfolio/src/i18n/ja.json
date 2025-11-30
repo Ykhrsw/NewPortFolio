@@ -65,6 +65,8 @@
   "project_3_desc": "Vercelで公開した初期制作サイト",
   "project_4_title": "ToDo List",
   "project_4_desc": "シンプルなタスク管理",
+  "project_5_title": "クイズアプリ",
+  "project_5_desc": "Reactで作成したクイズアプリ",
 
   "contact_form_name": "名前",
   "contact_form_email": "メール",
